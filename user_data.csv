@@ -1,12 +1,12 @@
-UserId,Email,Password,degree/major ID,event type ID
-1,Mayank,ilaloqce@gmail.com,kEiLRRAT1j,1,2
-2,Suvrat,tmyfvcrq@gmail.com,AWcsblJMvr,4,3
-3,Megha,idbdmrxa@gmail.com,fZK0WGPIiE,1,3
-4,Aishwarya,sdfwzcfu@hotmail.com,uhIX7xNf7P,5,4
-5,Anoushka,kuhdhuqk@outlook.com,a3MvtPf0aQ,4,3
-6,Chirag,suzxlnno@yahoo.com,XDGKVHwzjZ,4,3
-7,Nikita,qmpcwvqg@yahoo.com,jE9aoohYcU,5,4
-8,Raj,rilvmunj@gmail.com,t6EZKCeiKq,5,2
-9,Yash,knuhjjcm@hotmail.com,SWgonCTW3h,1,2
-10,Abhishek,hqvknqmn@outlook.com,PrlFJrvLNm,2,4
-11,Chandler,czaslmah@gmail.com,lcKKbf2b7c,4,1
+userid,name,email,pwd,major_type_id,event_type_id
+1,Mayank,bvbeofbu@yahoo.com,cLPUbVexrC,2,2
+2,Suvrat,wbvmyvyo@gmail.com,LGKwADBl6T,4,4
+3,Megha,uwgxevob@hotmail.com,POTjcr64Rj,1,3
+4,Aishwarya,etlqnkvm@outlook.com,3JJofLKKIC,2,4
+5,Anoushka,abvkeyza@outlook.com,gLlYDgCCnm,1,1
+6,Chirag,emvhvktm@gmail.com,1hHykAk936,3,4
+7,Nikita,gijqvqni@yahoo.com,xG4OMGXinD,2,2
+8,Raj,ynchtrlo@yahoo.com,FSKBV1fPvd,2,3
+9,Yash,gdvzfssr@yahoo.com,UIy0RJyOfC,1,1
+10,Abhishek,lhcyfsmu@gmail.com,K3zFvGeUcH,3,3
+11,Chandler,jercddzr@yahoo.com,1yQNKwLQMs,3,1
