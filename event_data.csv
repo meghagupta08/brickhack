@@ -1,11 +1,11 @@
-EventID,Event name,Event description,EventTypeID,LocationTypeID,startdate,enddate,eventduration,eventCapacity,MajorTypeID
-1,Workshop,Discover new ideas and strategies for success,2,2,2023-03-10 12:51:01,2023-03-10 17:51:01,5.0,99,2
-2,Hackathon,Get inspired and motivated to achieve your goals,3,3,2023-03-03 12:51:01,2023-03-03 14:51:01,2.0,98,2
-3,Workshop,Get inspired and motivated to achieve your goals,3,1,2023-03-16 12:51:01,2023-03-16 20:51:01,8.0,78,3
-4,Workshop,Improve your skills and advance your career,4,2,2023-03-15 12:51:01,2023-03-15 15:51:01,3.0,34,2
-5,Workshop,Meet and network with like-minded professionals,2,3,2023-03-20 12:51:01,2023-03-20 16:51:01,4.0,22,2
-6,Hackathon,Discover new ideas and strategies for success,4,1,2023-03-17 12:51:01,2023-03-17 18:51:01,6.0,9,3
-7,Workshop,Improve your skills and advance your career,1,1,2023-03-25 12:51:01,2023-03-25 17:51:01,5.0,21,2
-8,Workshop,Discover new ideas and strategies for success,1,2,2023-03-09 12:51:01,2023-03-09 13:51:01,1.0,62,3
-9,Networking Event,Meet and network with like-minded professionals,3,2,2023-03-11 12:51:01,2023-03-11 14:51:01,2.0,45,5
-10,Hackathon,Learn the latest technology trends from industry experts,2,3,2023-03-26 12:51:01,2023-03-26 15:51:01,3.0,53,1
+eventID,eventName,eventDesc,event_type_id,location_type_id,startdate,enddate,eventduration,eventCapacity,major_type_id
+1,Networking Event,Discover new ideas and strategies for success,1,1,2023-03-08 13:02:45,2023-03-08 14:02:45,1.0,16,1
+2,Seminar,Learn the latest technology trends from industry experts,4,2,2023-03-23 13:02:45,2023-03-23 20:02:45,7.0,92,5
+3,Workshop,Discover new ideas and strategies for success,2,1,2023-03-15 13:02:45,2023-03-15 19:02:45,6.0,89,5
+4,Hackathon,Improve your skills and advance your career,4,2,2023-03-11 13:02:45,2023-03-11 23:02:45,10.0,90,3
+5,Conference,Discover new ideas and strategies for success,2,2,2023-03-01 13:02:45,2023-03-01 21:02:45,8.0,99,5
+6,Seminar,Improve your skills and advance your career,4,3,2023-03-09 13:02:45,2023-03-09 23:02:45,10.0,59,4
+7,Seminar,Learn the latest technology trends from industry experts,4,2,2023-03-04 13:02:45,2023-03-04 19:02:45,6.0,57,4
+8,Conference,Improve your skills and advance your career,2,1,2023-03-24 13:02:45,2023-03-24 15:02:45,2.0,53,3
+9,Hackathon,Meet and network with like-minded professionals,3,1,2023-03-20 13:02:45,2023-03-20 20:02:45,7.0,82,1
+10,Seminar,Meet and network with like-minded professionals,4,1,2023-03-05 13:02:45,2023-03-05 23:02:45,10.0,10,4
