@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface UserEventRepository extends CrudRepository<UserEvent, UserEventKey> {
 
-    List<UserEvent> findByIdEventId(Integer userId);
+    List<UserEvent> findByIdEventId(Integer eventId);
 
-    List<UserEvent> findByIdUserId(Integer eventId);
+    List<UserEvent> findByIdUserId(Integer userId);
 }
