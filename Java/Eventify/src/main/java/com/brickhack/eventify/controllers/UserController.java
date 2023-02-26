@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller	// This means that this class is a Controller
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path="/user") // This means URL's start with /demo (after Application path)
 public class UserController {
     @Autowired // This means to get the bean called userRepository
