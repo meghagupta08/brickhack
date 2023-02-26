@@ -16,19 +16,19 @@ export class SearchEventsComponent implements OnInit {
 
   constructor(private eventServices: EventserviceService
   ) {
-    // this.event = {
-    //   eventID: 6,
-    //   eventName: "Hackathon",
-    //   eventDesc: "Discover new ideas and strategies for success",
-    //   event_type_id: 3,
-    //   location_type_id: 2,
-    //   startdate: new Date("2023-02-27 13:04:27"),
-    //   enddate: new Date("2023-02-27 17:04:27"),
-    //   eventduration: 4,
-    //   eventCapacity: 96,
-    //   major_type_id: 5,
-    //   event_type:"Games"
-    // } as Event;
+
+    this.event = {
+      id: 6,
+      eventName: "Hackathon",
+      eventDesc: "Discover new ideas and strategies for success",
+      eventType: "EDUCATION",
+      locationType: "INDOOR",
+      startDate: new Date("2023-02-27 13:04:27"),
+      endDate: new Date("2023-02-27 17:04:27"),
+      eventDuration: 4,
+      eventCapacity: 96,
+      major: "DATA_SCIENCE"
+    } as Event;
 
 
   }

@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path="/event")
 public class EventController {
 
@@ -124,6 +125,26 @@ public class EventController {
         }
         return ResponseEntity.status(400).body("Invalid user or event.");
     }
+
+    @GetMapping(path="/getUserEvents")
+    public @ResponseBody ResponseEntity getUserEvents(@RequestParam String email) {
+        List<User> users = userRepository.findByEmail(email);
+        List<Event> events = new ArrayList<>();
+        User user = users.get(0);
+        if(user != null){
+            List<UserEvent> userEvents = userEventRepository.findByIdUserId(user.getId());
+            if(userEvents != null){
+                for (UserEvent oneUserEvent: userEvents) {
+                    events.add(oneUserEvent.getEvent());
+                }
+                return ResponseEntity.ok(events);
+            }
+        } else {
+            return ResponseEntity.status(400).body("Invalid email.");
+        }
+        return ResponseEntity.status(400).body("No event found.");
+    }
+
 
 
 //    @GetMapping(path="/GetUserEvents")
