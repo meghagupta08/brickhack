@@ -12,8 +12,8 @@ import { Event } from '../Models/Event';
 })
 export class HomeComponent implements OnInit {
   //eventList: Event[];
-  event: Event;
 
+  eventList:Event[];
 
   credentials = {
     email: 'ms6674@rit.edu',
@@ -24,20 +24,7 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient,
     public homeService: HomeService,
   ) {
-    this.event = {
-      eventID: 6,
-      eventName: "Hackathon",
-      eventDesc: "Discover new ideas and strategies for success",
-      event_type_id: 3,
-      location_type_id: 2,
-      startdate: new Date("2023-02-27 13:04:27"),
-      enddate: new Date("2023-02-27 17:04:27"),
-      eventduration: 4,
-      eventCapacity: 96,
-      major_type_id: 5,
-      event_type:"Games"
-    } as Event;
-
+    this.eventList = [];
 
    }
 
@@ -62,6 +49,7 @@ export class HomeComponent implements OnInit {
       //   user.last_name = item?.last_name;
       //   user.id = item?.id;
       //   return user;
+      this.eventList = response;
       return response;
     });
   }

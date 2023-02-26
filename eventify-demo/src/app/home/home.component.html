@@ -1,13 +1,17 @@
 <h1 class="text-heading">My Events</h1>
-<div class="row">
+<div *ngFor="let eve of eventList;" class="row">
   <div class="col-lg-4 col-md-6 mb-4">
     <div class="card h-100">
       <div class="card-body">
-        <h4 class="card-title">Event title</h4>
-        <p class="card-text">Event description</p>
-        <p class="card-text">Location: </p>
-        <p class="card-text">Starts at:</p>
-        <p class="card-text">Ends at:</p>
+        <h4 class="card-title">{{eve.eventName}}</h4>
+        <p class="card-text">{{eve.eventDesc}}</p>
+        <p class="card-text">{{eve.eventType}}</p>
+        <p class="card-text">{{eve.locationType}}</p>
+        <p class="card-text">{{eve.startDate}}</p>
+        <p class="card-text">{{eve.endDate}}</p>
+        <p class="card-text">{{eve.eventDuration}}</p>
+        <p class="card-text">{{eve.eventCapacity}}</p>
+        <p class="card-text">{{eve.major}}</p>
       </div>
     </div>
   </div>

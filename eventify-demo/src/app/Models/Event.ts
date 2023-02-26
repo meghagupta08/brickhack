@@ -11,15 +11,14 @@
 //     "event_type": "Games"
 
     export interface Event {
-        eventID: number;
+        id: number;
         eventName: string;
         eventDesc: string;
-        event_type_id: number;
-        location_type_id: number;
-        startdate: Date;
-        enddate: Date;
-        eventduration: number;
+        eventType: string;
+        locationType: string;
+        startDate: Date;
+        endDate: Date;
+        eventDuration: number;
         eventCapacity: number;
-        major_type_id: number;
-        event_type:string;
+        major: string;
       }
