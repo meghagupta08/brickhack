@@ -45,7 +45,7 @@ def recommend_events(category, description):
     indices = np.argsort(similarities)[-5:]
     
     # Return the titles of the recommended events
-    return category_train.iloc[indices]["title"]
+    return category_train.iloc[indices]["eventName"]
 
 # Example usage
 

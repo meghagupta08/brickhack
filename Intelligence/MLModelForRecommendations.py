@@ -1,5 +1,4 @@
 import pandas as pd
-
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.neighbors import NearestNeighbors
@@ -51,8 +50,27 @@ if __name__== "__main__":
     description = "Playing Guitar!"
     recommended_events = recommend_events(category, description)
     print(recommended_events)
-    recommended_events['category'] = pd.Categorical(recommended_events['category'], ["Education"])
-    sorted_events =  recommended_events.sort_values("category")
-    print(sorted_events)
-    recommended_events_list = sorted_events.values.tolist()
-    print(recommended_events_list)
+
+
+    # recommended_events['category'] = pd.Categorical(recommended_events['category'], ["Education"])
+    # sorted_events =  recommended_events.sort_values("category")
+
+
+
+    # custom_order = ['Meetup', 'Education', 'Games']
+    # # print(custom_order)
+
+    # # convert eventValue to categorical data type with custom order
+    # recommended_events['category'] = pd.Categorical(recommended_events['category'], categories=custom_order, ordered=True)
+
+    # # sort dataframe by eventName and eventValue separately
+    # df_eventname_sorted = recommended_events.sort_values('eventName')
+    # df_eventvalue_sorted = recommended_events.sort_values('category')
+
+    # # group by eventName and sort by eventValue with custom sorting order
+    # df_grouped = df_eventname_sorted.groupby('eventName').apply(lambda x: x.sort_values('category'))
+
+
+    # print(df_grouped)
+    recommended_events_list = recommended_events.values.tolist()
+    print(recommended_events_list) 
