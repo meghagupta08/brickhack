@@ -131,6 +131,9 @@ form .form-row .textarea{
   .container .text{
     font-size: 30px;
   }
+  .container{
+    max-width: 90%;
+  }
   .container form{
     padding: 10px 0 0 0;
   }
