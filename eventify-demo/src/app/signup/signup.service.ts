@@ -27,7 +27,7 @@ export class SignupService {
   
 
   
-  createUser(user: User): Observable<any> {
+  createUser(user: any): Observable<any> {
     const url = this.baseUrl;
     const options = {
       headers: this.corsHeaders,
