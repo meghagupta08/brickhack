@@ -7,13 +7,14 @@ import com.brickhack.eventify.entities.UserEventKey;
 import com.brickhack.eventify.repositories.EventRepository;
 import com.brickhack.eventify.repositories.UserEventRepository;
 import com.brickhack.eventify.repositories.UserRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -48,11 +49,48 @@ public class EventController {
         return eventRepository.findAll();
     }
 
-    @GetMapping(path="/getUserRecommendedEvents")
-    public @ResponseBody Iterable<Event> getUserRecommendedEvents() {
-        //TODO: Connect to python module
-        return eventRepository.findAll();
-    }
+//    @GetMapping(path="/getUserRecommendedEvents")
+//    public @ResponseBody Iterable<Event> getUserRecommendedEvents(@RequestParam String email) throws JsonProcessingException {
+//        User user = userRepository.findByEmail(email).get(0);
+//        List<Event> userEventsList = new ArrayList<>();
+//        if(user != null){
+//            List<UserEvent> userEvents = userEventRepository.findByIdUserId(user.getId());
+//            if(userEvents != null){
+//                for (UserEvent oneUserEvent: userEvents) {
+//                    userEventsList.add(oneUserEvent.getEvent());
+//                }
+//                Set<Event> userEventSet = new HashSet<>(userEventsList);
+//                List<Event> allEventsExceptUser = new ArrayList<>();
+//                Iterable<Event> allEventsIterable = eventRepository.findAll();
+//                for (Event oneEvent: allEventsIterable) {
+//                    if (!userEventSet.contains(oneEvent)) {
+//                        allEventsExceptUser.add(oneEvent);
+//                    }
+//                }
+//
+//                ObjectMapper Obj = new ObjectMapper();
+//                for (Event oneUserEvent: userEventSet) {
+//                    String url = String.format("http://localhost:5000/getRecommendedEventsForUser?inputEvent={0}&allEvents={1}",
+//                            Obj.writeValueAsString(oneUserEvent),Obj.writeValueAsString(allEventsExceptUser));
+//
+//                    RestTemplate restTemplate = new RestTemplate();
+//                    String result = restTemplate.getForObject(url, String.class);
+//                    result.
+//
+//                }
+//
+//            }
+//        } else {
+//            return ResponseEntity.status(400).body("Invalid event id.");
+//        }
+//        return ResponseEntity.status(400).body("No event found.");
+//
+//        final String uri = "http://localhost:5000/getRecommendedEventsForUser";
+//        String url = String.format("http://localhost:5000/getRecommendedEventsForUser?inputEvent={var1value}&allEvents={var2value}");
+//        RestTemplate restTemplate = new RestTemplate();
+//        String result = restTemplate.getForObject(uri, String.class);
+//        return eventRepository.findAll();
+//    }
 
     @GetMapping(path="/getEvent")
     public @ResponseBody ResponseEntity getEvent(@RequestParam Integer id) {
@@ -145,48 +183,4 @@ public class EventController {
         return ResponseEntity.status(400).body("No event found.");
     }
 
-
-
-//    @GetMapping(path="/GetUserEvents")
-//    public @ResponseBody ResponseEntity getUserEvents(@RequestParam String email) {
-//        List<User> users = userRepository.findByEmail(email);
-//        if (users.size() > 0) {
-//            if (users.get(0).getPassword().equals(password)) {
-//                return ResponseEntity.ok("Login succeeded");
-//            }
-//        } else {
-//            return ResponseEntity.status(403).body("User does not exists.");
-//        }
-//        return ResponseEntity.status(403).body("Bad credentials.");
-//    }
-//
-//    @GetMapping(path="/authenticate")
-//    public @ResponseBody ResponseEntity authenticate(@RequestParam String email, @RequestParam String password) {
-//        List<User> users = eventRepository.findByEmail(email);
-//        if (users.size() > 0) {
-//            if (users.get(0).getPassword().equals(password)) {
-//                return ResponseEntity.ok("Login succeeded");
-//            }
-//        } else {
-//            return ResponseEntity.status(403).body("User does not exists.");
-//        }
-//        return ResponseEntity.status(403).body("Bad credentials.");
-//    }
-//
-//    @GetMapping(path="/getUser")
-//    public @ResponseBody ResponseEntity getUser(@RequestParam String email) {
-//        List<User> users = eventRepository.findByEmail(email);
-//        if (users.size() > 0) {
-//            User user = users.get(0);
-//            user.setPassword(null);
-//            return ResponseEntity.status(200).body(users.get(0));
-//        }
-//        return ResponseEntity.status(400).body("User not found");
-//    }
-//
-//    @GetMapping(path="/all")
-//    public @ResponseBody Iterable<User> getAllUsers() {
-//        // This returns a JSON or XML with the users
-//        return eventRepository.findAll();
-//    }
 }

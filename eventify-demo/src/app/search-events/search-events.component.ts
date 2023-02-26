@@ -10,7 +10,7 @@ import {  EventserviceService } from '../service/eventservice.service';
 })
 export class SearchEventsComponent implements OnInit {
   searchText: string = '';
-  //event: Event;
+  event: Event;
   events!: Observable<Event[]>;
 
 

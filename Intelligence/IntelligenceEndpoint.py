@@ -124,6 +124,9 @@ def get_recommended_events_for_user():
     input_event = request.args["event"]
     input_event = json.loads(input_event)
 
+    events = request.args["allEvents"]
+    events = json.loads(events)
+
     # Find events with the same event type as the input event
     events_by_type = [
         event for event in events if event["event_type"] == input_event["event_type"]]
