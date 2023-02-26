@@ -1,32 +1,49 @@
-<h2>Signup</h2>
-<form (submit)="onSubmit()" class="signup-form">
-    <div class="form-group">
-        <input type="email" placeholder="Email" name="email" [(ngModel)]="userData.email" required>
-    </div>
-    <div class="form-group">
-        <input type="password" placeholder="Password" name="password" [(ngModel)]="userData.password" required>
-    </div>
-    <div class="form-group">
-        <label for="degree_major_id">Degree/Major</label>
-        <select name="degree_major_id" [(ngModel)]="userData.degree_major_id" required>
-            <option value="" disabled selected>Select degree/major</option>
-            <option value="data-science">Data Science</option>
-            <option value="human-computer-interaction">Human Computer Interaction</option>
-            <option value="computer-science">Computer Science</option>
-            <option value="finance-and-analytics">Finance and Analytics</option>
-            <option value="packaging-science">Packaging Science</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="event_type_id">Event Type</label>
-        <select name="event_type_id" [(ngModel)]="userData.event_type_id" required>
-            <option value="" disabled selected>Select event type</option>
-            <option value="educational">Educational</option>
-            <option value="party">Party</option>
-            <option value="games">Games</option>
-            <option value="meetups">Meetups</option>
-        </select>
-    </div>
-    <button type="submit">Sign up</button>
-</form>
-<p *ngIf="submitted">You entered the following data: <br> Email: {{ userData.email }} <br> Password: {{ userData.password }} <br> Degree/Major ID: {{ userData.degree_major_id }} <br> Event Type ID: {{ userData.event_type_id }}</p>
+<div class="container">
+    <div class="text">Signup</div>
+    <form (submit)="onSubmit()" class="signup-form" #signupForm="ngForm">
+        <div class="form-row">
+            <div class="input-data">
+                <input type="email" id="email" name="email" [(ngModel)]="userData.email" required>
+                <div class="underline"></div>
+                <label for="email">Email Address</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="input-data">
+                <input type="password" id="password" name="password" [(ngModel)]="userData.password" required>
+                <div class="underline"></div>
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="input-data">
+                <select name="degree_major_id" [(ngModel)]="userData.degree_major_id" required>
+                    <option value="" disabled selected>Select major</option>
+                    <option value="DATA_SCIENCE">Data Science</option>
+                    <option value="HUMAN_COMPUTER_INTERACTION">Human Computer Interaction</option>
+                    <option value="COMPUTER_SCIENCE">Computer Science</option>
+                    <option value="FINANCE_AND_ANALYTICS">Finance and Analytics</option>
+                    <option value="PACKAGING_SCIENCE">Packaging Science</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="input-data">
+                <select name="event_type_id" [(ngModel)]="userData.event_type_id" required>
+                    <option value="" disabled selected>Select Event Type</option>
+                    <option value="educational">Educational</option>
+                    <option value="party">Party</option>
+                    <option value="games">Games</option>
+                    <option value="meetups">Meetups</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row submit-btn">
+            <div class="input-data">
+                <div class="inner"></div>
+                <input type="submit" value="Sign Up" [disabled]="!signupForm.form.valid">
+            </div>
+        </div>
+    </form>
+    <p *ngIf="submitted">You entered the following data: <br> Email: {{ userData.email }} <br> Password: {{ userData.password }} <br> Degree/Major ID: {{ userData.degree_major_id }} <br> Event Type ID: {{ userData.event_type_id }}</p>
+</div>
