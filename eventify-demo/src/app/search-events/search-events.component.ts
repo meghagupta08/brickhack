@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Event } from '../Models/Event';
 
 @Component({
   selector: 'app-search-events',
@@ -7,6 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchEventsComponent implements OnInit {
   searchText: string = '';
+  event: Event;
+  
+
+  constructor(
+  ) {
+    this.event = {
+      eventID: 6,
+      eventName: "Hackathon",
+      eventDesc: "Discover new ideas and strategies for success",
+      event_type_id: 3,
+      location_type_id: 2,
+      startdate: new Date("2023-02-27 13:04:27"),
+      enddate: new Date("2023-02-27 17:04:27"),
+      eventduration: 4,
+      eventCapacity: 96,
+      major_type_id: 5,
+      event_type:"Games"
+    } as Event;
+
+
+  }
+  
+
+  // functionality: 1. On search an event, we call getAllEvents and use a simple search to search the events list
+  // 2. On init there should be an api call for getEvents()
+  // 3. getRecommendedEvents should hit a get API and should send an event 
   
   ngOnInit(): void {
     // this.getEvents();
@@ -19,6 +46,9 @@ export class SearchEventsComponent implements OnInit {
     //     events => this.events = events,
     //     error => this.errorMessage = <any>error
     //   );
+
+
+
   }
 
   getRecommendedEvents(): void {
