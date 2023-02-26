@@ -12,10 +12,11 @@ export class CreateupdateeventComponent {
   eventData = {
     title: '',
     description: '',
-    date: '',
-    time: '',
-    location: '',
-    image: ''
+    startdate: '',
+    enddate: '',
+    starttime: '',
+    endtime: '',
+    location: ''
   };
 
   ngOnInit(): void {
