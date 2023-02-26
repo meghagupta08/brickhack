@@ -9,13 +9,22 @@
       <div class="col-md-12">
         <h2>All Events</h2>
         <div class="slider">
-          <div class="card h-100">
+          <!-- <div class="card h-100">
             <div class="card-body">
               <h4 class="card-title">Event title</h4>
               <p class="card-text">Event description</p>
               <p class="card-text">Location: </p>
               <p class="card-text">Starts at:</p>
               <p class="card-text">Ends at:</p>
+            </div>
+          </div> -->
+          <div class="card h-100" *ngFor="let event of events | async">
+            <div class="card-body">
+              <h4 class="card-title">{{event.eventName}}</h4>
+              <p class="card-text">{{event.eventDesc}}</p>
+              <p class="card-text">Location: {{event.location_type_id}}</p>
+              <p class="card-text">Starts at: {{event.startdate}}</p>
+              <p class="card-text">Ends at: {{event.enddate}}</p>
             </div>
           </div>
         </div>

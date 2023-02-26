@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../Models/Event';
+import { Observable } from 'rxjs';
+import {  EventserviceService } from '../service/eventservice.service';
 
 @Component({
   selector: 'app-search-events',
@@ -8,11 +10,13 @@ import { Event } from '../Models/Event';
 })
 export class SearchEventsComponent implements OnInit {
   searchText: string = '';
-  event: Event;
-  
+  //event: Event;
+  events!: Observable<Event[]>;
 
-  constructor(
+
+  constructor(private eventServices: EventserviceService
   ) {
+
     this.event = {
       id: 6,
       eventName: "Hackathon",
@@ -35,7 +39,7 @@ export class SearchEventsComponent implements OnInit {
   // 3. getRecommendedEvents should hit a get API and should send an event 
   
   ngOnInit(): void {
-    // this.getEvents();
+     this.getEvents();
     // this.getRecommendedEvents();
   }
 
@@ -46,7 +50,7 @@ export class SearchEventsComponent implements OnInit {
     //     error => this.errorMessage = <any>error
     //   );
 
-
+    this.events =  this.eventServices.getallevents();
 
   }
 
