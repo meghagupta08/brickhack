@@ -18,6 +18,14 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
+  submitted = false;
+
+  onLogin() {
+    this.submitted = true;
+    console.log(this.credentials.email,this.credentials.password);
+  }
+
+
 
   constructor(private http: HttpClient,
     public loginService: LoginService,

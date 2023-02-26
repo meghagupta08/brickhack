@@ -18,6 +18,7 @@ export class SignupComponent {
 
   onSubmit() {
     this.submitted = true;
+    console.log(this.userData.email,this.userData.password);
   }
 
   // constructor(private http: HttpClient) {}
