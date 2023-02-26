@@ -43,12 +43,24 @@
             <div class="input-data">
                 <select name="event_type_id" [(ngModel)]="eventData.location" required>
                     <option value="" disabled selected>Select Location Type</option>
-                    <option value="1">Indoor</option>
-                    <option value="2">Outdoor</option>
-                    <option value="3">Virtual</option>
+                    <option value="0">Indoor</option>
+                    <option value="1">Outdoor</option>
+                    <option value="2">Virtual</option>
                 </select>
             </div>
-        </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-data">
+                <select name="event_type_id" [(ngModel)]="eventData.eventType" required>
+                    <option value="" disabled selected>Select Event Type</option>
+                    <option value="educational">Educational</option>
+                    <option value="party">Party</option>
+                    <option value="games">Games</option>
+                    <option value="meetups">Meetups</option>
+                </select>
+            </div>
+          </div>
 
         <div class="form-row submit-btn">
           <div class="input-data">

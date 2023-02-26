@@ -16,7 +16,8 @@ export class CreateupdateeventComponent {
     enddate: '',
     starttime: '',
     endtime: '',
-    location: ''
+    location: '',
+    eventType: ''
   };
 
   ngOnInit(): void {
