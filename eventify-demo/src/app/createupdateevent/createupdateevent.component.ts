@@ -9,14 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 export class CreateupdateeventComponent {
 
   isNew: boolean = true;
-  // event: Event = {
-  //   title: '',
-  //   description: '',
-  //   date: '',
-  //   time: '',
-  //   location: '',
-  //   image: ''
-  // };
+  eventData = {
+    title: '',
+    description: '',
+    date: '',
+    time: '',
+    location: '',
+    image: ''
+  };
 
   ngOnInit(): void {
     // this.route.params.subscribe(params => {
